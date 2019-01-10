@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="boostrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="layui/css/layui.css" />
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/bankdata.js"></script>
+        <script src="js/bank.js"></script>
+        <script type="text/javascript" src="layui/layui.js"></script>
+
+        <style>
+            .safep{
+               font-size: 18px;
+               text-align: center; 
+            }
+            .labelp{
+                text-align: center;
+                padding: 10px 0;
+            }
+            table{
+                width: 45%;
+                height: 300px;
+
+            }
+            #success_result{
+                width: 100%;
+            }
+            #success_result>table{
+                 width: 45%;
+                height: 300px;
+                margin:0 auto;
+            }
+            h4{
+                margin-left: 30px;
+               padding-top: 10px;
+            }
+           
+             .resource-span {
+                display: inline-block;
+                padding: 0 7px;
+            }
+            #inittable{
+                margin: 0 auto;
+            }
+            .choosbox{
+                width: 48%;
+                margin:0 auto;
+            }
+            .requestResources{
+                padding: 10px 0;
+            }
+            .requestResources>div{
+               display: inline-block;
+            }
+            .requestResources input{
+                width: 120px;
+                height: 30px;
+                margin-right: 10px;
+            }
+            #request_resources_input{
+                margin:0;
+            }
+            #successBox{
+                display: none;
+            }
+            nav p{
+               margin-left: 80%;
+            }
+            h4{
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+    <nav class="navbar navbar-default" role="navigation">
+        <h4>银行家算法</h4>
+        <p>信安2班 杨艺 3216005218</p>
+    </nav>
+    <fieldset class="layui-elem-field layui-field-title">
+      <legend>初始化资源分配表</legend>
+      <div class="layui-field-box">
+        <table id="inittable">
+    
+        </table>
+        <fieldset class="layui-elem-field layui-field-title">
+          <legend>请求资源</legend>
+          <div class="layui-field-box">
+             <div class="choosbox">
+            <div>
+               <span>请求资源的进程：</span>
+               <div class="layui-input-inline">
+                    <select name="process" lay-verify="required" id="process"></select>
+               </div>
+            </div>
+            <div class="requestResources">
+               <span>请求的资源：</span>
+                <div class="layui-input-block" id="request_resources_input"></div>
+            </div>
+            <div class="">
+                <button class="btn btn-primary"  id="submitBtn">确定</button>
+                <button type="reset" class="btn btn-default">清空</button>
+            </div>
+        </div>
+          </div>
+        </fieldset>
+       
+      </div>
+    </fieldset>
+   <fieldset class="layui-elem-field layui-field-title" id="successBox">
+      <legend>请求结果</legend>
+      <div id="success_result">
+       
+      </div>
+    </fieldset>
+    </body>
+    <script>
+        layui.use(['element','form','layer'], function(){
+        var element = layui.element,
+            form = layui.form,
+            layer = layui.layer;
+        /*window.initElement = function() {
+            element.render();
+        }*/
+       
+    });
+    </script>
+</html>
